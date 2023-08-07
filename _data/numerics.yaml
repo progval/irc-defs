@@ -1674,13 +1674,16 @@ values:
         numeric: "335"
         origin: Hybrid
         conflict: true
-        comment: Since hybrid 8.2.0
+        obsolete: true
+        comment: From hybrid 8.2.0 to 8.2.36, moved to 339
 
     -
         name: RPL_WHOISACCOUNTONLY
         numeric: "335"
         origin: Nefarious
         conflict: true
+        obsolete: true
+        comment: Replaced by RPL_WHOISSPECIAL
 
     -
         name: RPL_INVITELIST
@@ -1688,9 +1691,10 @@ values:
         origin: Hybrid
         format: "<client> :<channel>"
         comment: >
-            Since hybrid 8.2.0. Not to be confused with the more widely used 346.
+            A "list of channels a client is invited to" sent with /INVITE.
 
-            A "list of channels a client is invited to" sent with /INVITE
+            Since hybrid 8.2.0. Not to be confused with the more widely used 346
+            (RPL_INVEXLIST) which lists masks.
 
         conflict: true
 
@@ -1699,6 +1703,9 @@ values:
         numeric: "336"
         origin: Nefarious
         conflict: true
+        obsolete: true
+        comment: >
+            Nefarious and others moved to 335.
 
     -
         name: RPL_ENDOFINVITELIST
@@ -1707,7 +1714,8 @@ values:
         format: "<client> :End of /INVITE list."
         conflict: true
         comment: >
-            Since hybrid 8.2.0. Not to be confused with the more widely used 347.
+            Since hybrid 8.2.0. Not to be confused with the more widely used 347
+            (RPL_ENDOFINVEXLIST) which lists masks.
 
     -
         name: RPL_WHOISTEXT
@@ -1824,7 +1832,8 @@ values:
         format: "<client> <channel> <invitemask>"
         comment: >
             An invite mask for the invite mask list.
-            Also known as RPL_INVEXLIST in hybrid 8.2.0
+            Also known as RPL_INVEXLIST in hybrid 8.2.0.
+            Not to be confused with 336 (also called RPL_INVITELIST) which lists invited nicks.
 
     -
         name: RPL_ENDOFINVITELIST
@@ -1833,7 +1842,8 @@ values:
         format: "<client> <channel> :<info>"
         comment: >
             Termination of an RPL_INVITELIST list.
-            Also known as RPL_ENDOFINVEXLIST in hybrid 8.2.0
+            Also known as RPL_ENDOFINVEXLIST in hybrid 8.2.0.
+            Not to be confused with 336 (also called RPL_ENDOFINVITELIST) which lists invited nicks.
 
     -
         name: RPL_EXCEPTLIST
